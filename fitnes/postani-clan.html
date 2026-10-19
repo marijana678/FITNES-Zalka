@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postani član | Žal'ka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar container">
+        <a class="logo" href="index.html">Žal'ka</a>
+        <div class="nav-links">
+            <a href="index.html">Domov</a>
+            <a href="studii.html">Studii</a>
+            <a href="cenik.html">Cenik</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a class="active" href="postani-clan.html">Postani član</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="page-banner">
+        <div class="container">
+            <p class="eyebrow">Pridruži se naši skupnosti</p>
+            <h1>Postani <span class="highlight">član</span></h1>
+            <p>Izpolni obrazec in naredi prvi korak.</p>
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="contact-grid">
+
+            <div class="form-box">
+                <h2>Prijavi se</h2>
+
+                <form id="loginForm">
+                    <label for="loginEmail">E-pošta</label>
+                    <input id="loginEmail" name="email" type="email"
+                           placeholder="Tvoja e-pošta" required>
+
+                    <label for="loginPassword">Geslo</label>
+                    <input id="loginPassword" name="password"
+                           type="password" placeholder="Tvoje geslo"
+                           required>
+
+                    <button type="submit">PRIJAVA</button>
+                    <p id="loginMessage" class="form-message"
+                       role="status"></p>
+                </form>
+
+                <p><a href="#registracija">Še nimaš računa? Registriraj se.</a></p>
+            </div>
+
+            <div class="form-box" id="registracija">
+                <h2>Registriraj se</h2>
+
+                <form id="registerForm">
+                    <label for="ime">Ime</label>
+                    <input id="ime" name="ime" type="text"
+                           placeholder="Tvoje ime" required>
+
+                    <label for="priimek">Priimek</label>
+                    <input id="priimek" name="priimek" type="text"
+                           placeholder="Tvoj priimek" required>
+
+                    <label for="registerEmail">E-pošta</label>
+                    <input id="registerEmail" name="email" type="email"
+                           placeholder="Tvoja e-pošta" required>
+
+                    <label for="telefon">Telefon</label>
+                    <input id="telefon" name="telefon" type="tel"
+                           placeholder="Tvoja telefonska številka">
+
+                    <label for="paket">Izberi paket</label>
+                    <select id="paket" name="paket" required>
+                        <option value="">Izberi paket</option>
+                        <option value="all-in">ALL-IN PAKET – 59,90 €</option>
+                        <option value="basic">BASIC PAKET – 44,90 €</option>
+                    </select>
+
+                    <label for="registerPassword">Ustvari geslo</label>
+                    <input id="registerPassword" name="password"
+                           type="password" minlength="8"
+                           placeholder="Najmanj 8 znakov" required>
+
+                    <label>
+                        <input type="checkbox" name="pogoji"
+                               required style="width:auto;display:inline">
+                        Strinjam se s pogoji članstva.
+                    </label>
+
+                    <button type="submit">USTVARI RAČUN</button>
+                    <p id="registerMessage" class="form-message"
+                       role="status"></p>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Začni svojo zgodbo danes.</h2>
+            <a class="btn" href="cenik.html">PREGLEJ CENIK</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><a class="logo" href="index.html">Žal'ka</a>
+                <p>Tvoj fitnes, tvoji cilji.</p>
+            </div>
+            <div><h3>Povezave</h3>
+                <p><a href="cenik.html">Cenik</a></p>
+                <p><a href="studii.html">Studii</a></p>
+            </div>
+            <div><h3>Pomoč</h3>
+                <p><a href="kontakt.html">Kontaktiraj nas</a></p>
+            </div>
+        </div>
+        <div class="copyright">© 2026 Žal'ka</div>
+    </div>
+</footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const izbranPaket = params.get("paket");
+
+if (izbranPaket === "all-in" || izbranPaket === "basic") {
+    document.getElementById("paket").value = izbranPaket;
+}
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    document.getElementById("loginMessage").textContent =
+        "Prijavni obrazec je pripravljen. Za preverjanje računa je potreben strežnik.";
+});
+
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    document.getElementById("registerMessage").textContent =
+        "Obrazec je pravilno izpolnjen. Za ustvarjanje računa je potrebna strežniška povezava.";
+});
+</script>
+
+</body>
+</html>

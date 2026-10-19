@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Žal'ka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar container">
+        <a class="logo" href="index.html">Žal'ka</a>
+        <div class="nav-links">
+            <a href="index.html">Domov</a>
+            <a href="studii.html">Studii</a>
+            <a href="cenik.html">Cenik</a>
+            <a class="active" href="kontakt.html">Kontakt</a>
+            <a href="postani-clan.html">Postani član</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="page-banner">
+        <div class="container">
+            <p class="eyebrow">Smo tukaj zate</p>
+            <h1>Kontaktiraj <span class="highlight">nas</span></h1>
+            <p>Pošlji vprašanje ali nam povej, kako ti lahko pomagamo.</p>
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="contact-grid">
+
+            <div class="form-box">
+                <h2>Pošlji <span class="highlight">sporočilo</span></h2>
+
+                <form id="contactForm">
+                    <label for="ime">Ime in priimek</label>
+                    <input id="ime" name="ime" type="text"
+                           placeholder="Tvoje ime" required>
+
+                    <label for="email">E-pošta</label>
+                    <input id="email" name="email" type="email"
+                           placeholder="ime@email.com" required>
+
+                    <label for="zadeva">Zadeva</label>
+                    <select id="zadeva" name="zadeva" required>
+                        <option value="">Izberi zadevo</option>
+                        <option>Članstvo</option>
+                        <option>Cenik</option>
+                        <option>Lokacije</option>
+                        <option>Vodene vadbe</option>
+                        <option>Drugo</option>
+                    </select>
+
+                    <label for="sporocilo">Sporočilo</label>
+                    <textarea id="sporocilo" name="sporocilo"
+                              placeholder="Napiši svoje vprašanje..."
+                              required></textarea>
+
+                    <button type="submit">POŠLJI SPOROČILO</button>
+                    <p class="form-message" id="contactMessage"
+                       role="status"></p>
+                </form>
+            </div>
+
+            <div>
+                <h2>Podatki za <span class="highlight">kontakt</span></h2>
+                <p>Če imaš vprašanje o članstvu ali vadbi, nam piši.</p>
+
+                <div class="card-content">
+                    <h3>E-pošta</h3>
+                    <p>info@zal-ka.si</p>
+
+                    <h3>Lokacija</h3>
+                    <p>Ljubljana, Slovenija</p>
+
+                    <h3>Delovni čas</h3>
+                    <p>Za aktualni urnik nas kontaktiraj.</p>
+                </div>
+
+                <iframe
+                    class="map-frame"
+                    title="Zemljevid Ljubljane"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=14.45%2C46.04%2C14.56%2C46.09&layer=mapnik">
+                </iframe>
+                <p><small>Zemljevid prikazuje širše območje Ljubljane.</small></p>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><a class="logo" href="index.html">Žal'ka</a>
+                <p>Začni svojo pot do boljšega počutja.</p>
+            </div>
+            <div><h3>Povezave</h3>
+                <p><a href="cenik.html">Cenik</a></p>
+                <p><a href="studii.html">Studii</a></p>
+            </div>
+            <div><h3>Kontakt</h3>
+                <p>info@zal-ka.si</p>
+            </div>
+        </div>
+        <div class="copyright">© 2026 Žal'ka</div>
+    </div>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    document.getElementById("contactMessage").textContent =
+        "Obrazec je izpolnjen, vendar sporočilo še ni poslano. Za pošiljanje je potrebna povezava s strežnikom ali e-poštno storitvijo.";
+});
+</script>
+
+</body>
+</html>

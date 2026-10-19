@@ -1,0 +1,438 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --yellow: #ffd000;
+    --orange: #ff4b00;
+    --black: #080808;
+    --dark: #171717;
+    --white: #ffffff;
+    --muted: #bdbdbd;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: var(--yellow);
+    color: #080808;
+    border: 0;
+    border-radius: 3px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--orange);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.container {
+    width: min(1150px, 92%);
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, .96);
+    border-bottom: 2px solid var(--yellow);
+}
+
+.navbar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--yellow);
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--yellow);
+}
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.92),
+        rgba(0,0,0,.55), rgba(0,0,0,.25)),
+        url("images/fitnes.jpg") center/cover;
+}
+
+.hero-content {
+    max-width: 650px;
+    padding: 70px 0;
+}
+
+.eyebrow {
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: clamp(38px, 6vw, 70px);
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    text-transform: uppercase;
+}
+
+h2 span,
+.highlight {
+    color: var(--yellow);
+}
+
+.section {
+    padding: 75px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--dark);
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 24px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--yellow);
+}
+
+.page-banner {
+    padding: 65px 0;
+    background: #171717;
+    border-bottom: 3px solid var(--yellow);
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-size: clamp(34px, 5vw, 55px);
+}
+
+.page-banner p {
+    color: var(--muted);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.price-card {
+    background: #f4f4f4;
+    color: #171717;
+    text-align: center;
+    border-top: 9px solid var(--yellow);
+    box-shadow: 0 10px 30px #0006;
+}
+
+.price-card.featured {
+    border-top-color: var(--orange);
+}
+
+.price-card h3 {
+    background: #080808;
+    color: white;
+    padding: 18px;
+    margin: 0;
+}
+
+.price {
+    color: #171717;
+    font-size: 38px;
+    font-weight: 900;
+    margin: 18px 0 0;
+}
+
+.price small {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.price-card ul {
+    padding: 15px 30px;
+    list-style: none;
+    text-align: left;
+}
+
+.price-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.price-card li::before {
+    content: "✓ ";
+    color: #bd8e00;
+    font-weight: bold;
+}
+
+.price-card .btn {
+    margin: 10px 0 25px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.form-box {
+    background: #f4f4f4;
+    color: #171717;
+    padding: 28px;
+    border-radius: 4px;
+}
+
+.form-box h2,
+.form-box h3 {
+    margin-top: 0;
+}
+
+form label {
+    display: block;
+    margin: 14px 0 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: white;
+    color: #171717;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.form-message {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+.map-frame {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    background: #222;
+}
+
+.studio-photo {
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.benefits {
+    background: var(--yellow);
+    color: #080808;
+}
+
+.benefits .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.benefit {
+    padding: 24px;
+    border: 1px solid #0003;
+}
+
+.benefit h3 {
+    margin-top: 0;
+}
+
+.cta {
+    padding: 55px 20px;
+    text-align: center;
+    background: var(--orange);
+}
+
+.cta h2 {
+    margin-top: 0;
+}
+
+.cta .btn {
+    background: #080808;
+    color: white;
+}
+
+footer {
+    padding: 45px 0 20px;
+    background: #050505;
+    border-top: 1px solid #333;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 30px;
+}
+
+footer h3 {
+    color: var(--yellow);
+}
+
+footer p,
+footer a {
+    color: #ccc;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: var(--yellow);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 25px;
+    border-top: 1px solid #333;
+    color: #888;
+    font-size: 12px;
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        padding: 14px 0;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 470px;
+    }
+
+    .grid,
+    .pricing-grid,
+    .contact-grid,
+    .footer-grid,
+    .benefits .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 48px 0;
+    }
+}
